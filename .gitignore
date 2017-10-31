@@ -1,0 +1,10 @@
+# ignore files    #
+###################
+*.pdf
+*.aux
+*.lo*
+*.bb*
+*.to*
+*.bl*
+*.gz
+.DS_Store

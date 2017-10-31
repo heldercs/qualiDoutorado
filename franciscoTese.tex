@@ -1,0 +1,73 @@
+\documentclass[12pt,oneside,final]{book}
+
+\usepackage[portuges,brazil]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{indentfirst}
+\usepackage{ae}
+\usepackage{harvard}
+\usepackage{amssymb,fancyhdr,fancybox,epsfig,psfrag,amsmath,tabularx}
+\usepackage[paperwidth=8.5in,paperheight=11in,hmargin={25mm,20mm},vmargin={20mm,20mm}]{geometry} %tamanho letter
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+
+\usepackage[color]{showkeys}
+\definecolor{refkey}{rgb}{0.39,0.58,1}
+\definecolor{labeled}{rgb}{1,0,0}
+\usepackage[Lenny]{fncychap}
+\setlength{\headheight}{15pt}
+
+%=========================================== Headers =========================================
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter. \ #1}{ }}
+\renewcommand{\sectionmark}[1]{\markright{\thesection. \ #1}}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LO]{\nouppercase{\leftmark}}
+\fancyhead[RO]{\thepage}
+
+\input{macros}
+
+\begin{document}
+
+\pagenumbering{roman}
+\pagestyle{plain}
+
+\input{capa}
+
+\baselineskip 1.1 \baselineskip
+
+\input{res_abstract}
+
+
+%=============================== lista de tabelas e figuras ==========================
+\listoffigures
+
+\listoftables
+
+%============================ acrônimos, símbolos e notações ========================
+\input{acro_notacao.tex}
+
+%=============================== sumário =============================================
+\tableofcontents
+
+
+\pagestyle{fancy}
+
+\include{capitulos/cap1}
+\include{capitulos/cap2}
+\include{capitulos/cap3}
+\include{capitulos/cap4}
+
+
+\include{capitulos/conclusao}
+
+
+%=============================== Bibliografia ===============================================
+\addcontentsline{toc}{chapter}{Bibliografia}
+\renewcommand{\bibname}{Bibliografia}
+\markboth{Bibliografia}{Bibliografia}
+
+\bibliographystyle{dcu}
+\bibliography{meubib}
+
+\end{document}
